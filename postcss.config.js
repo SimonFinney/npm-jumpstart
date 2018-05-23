@@ -1,6 +1,5 @@
 /**
  * @file PostCSS configuration.
- * @author Simon Finney <simonjfinney@gmail.com>
  */
 
 module.exports = {

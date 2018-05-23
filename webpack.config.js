@@ -1,13 +1,12 @@
 /**
  * @file webpack configuration.
- * @author Simon Finney <simonjfinney@gmail.com>
  */
 
 const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 
-const path = require('path');
+const { resolve } = require('path');
 
 const { name } = require('./package.json');
 
@@ -18,8 +17,8 @@ const entry = 'index';
  * Creates an object for maintaining paths throughout the webpack configuration.
  */
 const paths = new function paths() {
-  this.src = path.resolve(__dirname, 'src');
-  this.dist = path.resolve(__dirname, 'dist');
+  this.src = resolve(__dirname, 'src');
+  this.dist = resolve(__dirname, 'dist');
 }();
 
 /**
@@ -28,7 +27,7 @@ const paths = new function paths() {
  */
 module.exports = ({ development } = false) => ({
   devtool: development && 'cheap-module-eval-source-map',
-  entry: development && [paths.src, path.resolve(paths.src, `${entry}.scss`)],
+  entry: development && [paths.src, resolve(paths.src, `${entry}.scss`)],
   module: {
     rules: [
       {
@@ -52,7 +51,7 @@ module.exports = ({ development } = false) => ({
     new ExtractTextPlugin(`${entry}.css`),
     development &&
       new HtmlPlugin({
-        template: path.resolve(paths.src, `${entry}.html`),
+        template: resolve(paths.src, `${entry}.html`),
         title: name,
       }),
   ].filter(Boolean),

@@ -20,7 +20,13 @@
     "type": "git",
     "url": "git+https://github.com/SimonFinney/npm-jumpstart.git"
   },
-  "keywords": ["npm", "jumpstart", "boilerplate", "bootstrap", "quickstart"],
+  "keywords": [
+    "npm",
+    "jumpstart",
+    "boilerplate",
+    "bootstrap",
+    "quickstart"
+  ],
   "author": "Simon Finney <simonjfinney@gmail.com>",
   "license": "ISC",
   "bugs": {
@@ -58,9 +64,16 @@
     "webpack-cli": "^2.0.12",
     "webpack-dev-server": "^3.1.1"
   },
-  "bin": "./cli.js",
-  "browserslist": ["> 1%", "Last 2 versions"],
+  "bin": "cli.js",
+  "browserslist": [
+    "> 1%",
+    "Last 2 versions"
+  ],
   "dependencies": {
-    "inquirer": "^5.2.0"
+    "fs-extra": "^6.0.1",
+    "handlebars": "^4.0.11",
+    "ignore": "^3.3.8",
+    "inquirer": "^5.2.0",
+    "parse-gitignore": "^0.4.0"
   }
 }

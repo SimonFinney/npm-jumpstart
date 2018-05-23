@@ -1,6 +1,5 @@
 /**
  * @file Tests.
- * @author Simon Finney <simonjfinney@gmail.com>
  */
 
 describe('Tests', () => {
